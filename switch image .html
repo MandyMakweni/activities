@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+</head>
+<body>
+       <div id="title"></div>
+       <div id="desc"></div>
+       <div id="imageContainer"><img src="http://i.imgur.com/S0pa8yX.png" id="showImage"></div>
+       <div id="btnBox">
+          <form><input type = "button" id="myBtn" value="Click here to read your fortune" /</form>
+        </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+jQuery(
+   function(){
+     var cardTitle = [
+       "Judgement",
+       "Magician",
+       "Strength",
+       "The High Priestess",
+       "The World"
+      ];
+
+     var cardDesc = [];
+       cardDesc[0] = "Judgment tells a ...";
+       cardDesc[1] = "The Magician generally ...";
+       cardDesc[2] = "Strength is the rawest ...";
+       cardDesc[3] = "Your identification ...";
+       cardDesc[4] = "The World is an indicator ...";
+
+     var drawCard = [
+       "http://i.imgur.com/53P6x74.png",
+       "http://i.imgur.com/xdmUn2n.png",
+       "http://i.imgur.com/E2VGZ8q.png",
+       "http://i.imgur.com/cKCzwkm.png",
+       "http://i.imgur.com/8SwTDeX.png"
+     ];
+
+    $("#myBtn").click(
+      function(){
+        var drawNum = Math.floor(Math.random() * drawCard.length);
+        $("#title").html(cardTitle[drawNum]);
+        $("#desc").html(cardDesc[drawNum]);
+        $("#showImage").fadeOut(
+          function(){
+            $(this).attr('src', drawCard[drawNum])
+            .fadeIn();
+          }
+        ); // end fadeOut
+      }
+    ); //end click
+}); //end jQuery container
