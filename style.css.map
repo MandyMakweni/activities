@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "style.css",
+	"sources": [
+		"style.scss"
+	],
+	"sourcesContent": [
+		"$menu-hover-lines-transition: all 0.35s ease;\n$menu-hover-lines-border-width: 3px;\n\n.menu-hover-lines {\n  text-align: center;\n  text-transform: uppercase;\n  font-weight: 500;\n  letter-spacing: 1px;\n  transition: $menu-hover-lines-transition;\n\n  li a {\n    padding: 0.75rem 0;\n    color: rgba(black, 0.5);\n    position: relative;\n    margin-left: 1rem;\n  }\n\n  li:first-child a {\n    margin-left: 0;\n  }\n\n  li.active > a {\n    background-color: transparent;\n  }\n\n  a:before,\n  a::after {\n    height: $menu-hover-lines-border-width;\n    position: absolute;\n    content: '';\n    transition: $menu-hover-lines-transition;\n    background-color: blue;\n    width: 0;\n  }\n\n  a::before {\n    top: 0;\n    left: 0;\n  }\n\n  a::after {\n    bottom: 0;\n    right: 0;\n  }\n\n  a:hover,\n  li.active > a {\n    color: blue;\n    transition: $menu-hover-lines-transition;\n  }\n\n  a:hover::before,\n  .active a::before,\n  a:hover::after,\n  .active a::after {\n    width: 100%;\n  }\n}\n"
+	],
+	"names": [],
+	"mappings": ";AAGA,AAAA,iBAAiB,CAAC;EAChB,UAAU,EAAE,MAAM;EAClB,cAAc,EAAE,SAAS;EACzB,WAAW,EAAE,GAAG;EAChB,cAAc,EAAE,GAAG;EACnB,UAAU,EARkB,GAAG,CAAC,KAAK,CAAC,IAAI;CAyD3C;;;AAtDD,AAOK,iBAPY,CAOf,EAAE,CAAC,CAAC,CAAC;EACH,OAAO,EAAE,SAAS;EAClB,KAAK,EAAO,kBAAK;EACjB,QAAQ,EAAE,QAAQ;EAClB,WAAW,EAAE,IAAI;CAClB;;;AAZH,AAciB,iBAdA,CAcf,EAAE,AAAA,YAAY,CAAC,CAAC,CAAC;EACf,WAAW,EAAE,CAAC;CACf;;;AAhBH,AAkBc,iBAlBG,CAkBf,EAAE,AAAA,OAAO,GAAG,CAAC,CAAC;EACZ,gBAAgB,EAAE,WAAW;CAC9B;;;AApBH,AAsBE,iBAtBe,CAsBf,CAAC,AAAA,OAAO;AAtBV,AAuBE,iBAvBe,CAuBf,CAAC,AAAA,OAAO,CAAC;EACP,MAAM,EA1BsB,GAAG;EA2B/B,QAAQ,EAAE,QAAQ;EAClB,OAAO,EAAE,EAAE;EACX,UAAU,EA9BgB,GAAG,CAAC,KAAK,CAAC,IAAI;EA+BxC,gBAAgB,EAAE,IAAI;EACtB,KAAK,EAAE,CAAC;CACT;;;AA9BH,AAgCE,iBAhCe,CAgCf,CAAC,AAAA,QAAQ,CAAC;EACR,GAAG,EAAE,CAAC;EACN,IAAI,EAAE,CAAC;CACR;;;AAnCH,AAqCE,iBArCe,CAqCf,CAAC,AAAA,OAAO,CAAC;EACP,MAAM,EAAE,CAAC;EACT,KAAK,EAAE,CAAC;CACT;;;AAxCH,AA0CE,iBA1Ce,CA0Cf,CAAC,AAAA,MAAM;AA1CT,AA2Cc,iBA3CG,CA2Cf,EAAE,AAAA,OAAO,GAAG,CAAC,CAAC;EACZ,KAAK,EAAE,IAAI;EACX,UAAU,EAhDgB,GAAG,CAAC,KAAK,CAAC,IAAI;CAiDzC;;;AA9CH,AAgDE,iBAhDe,CAgDf,CAAC,AAAA,MAAM,AAAA,QAAQ;AAhDjB,AAiDU,iBAjDO,CAiDf,OAAO,CAAC,CAAC,AAAA,QAAQ;AAjDnB,AAkDE,iBAlDe,CAkDf,CAAC,AAAA,MAAM,AAAA,OAAO;AAlDhB,AAmDU,iBAnDO,CAmDf,OAAO,CAAC,CAAC,AAAA,OAAO,CAAC;EACf,KAAK,EAAE,IAAI;CACZ"
+}

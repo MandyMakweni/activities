@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Activity Finder</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    // <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+        <script src="jquery/jquery.min.js"></script>
+                <script src="jquery/jquery.js"></script>
+
+
+
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+
+
+    <ul class=" menu-hover-lines" style="list-style: none;">
+      <li style="float:right; padding: 30px;"><a href="#grounds">ADVENTURES</a></li>
+      <li style="float:right;"><a href="#sports">CRICKET</a></li>
+      <li style="float:right;"><a href="#books">BOOKS</a></li>
+      <li style="float:right;"><a href="#code">CODES</a></li>
+      <li style="float:right;"><a href="#art">ART</a></li>
+      <li class="active" style="float:right;"><a href="#">HOME</a></li>
+
+</ul>
+
+</head>
+
+<ul></ul>
+
+<button>fetch data</button>
+<body>
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+<!-- MAIN-->
+<div class="main">
+
+<input type="radio" onclick="filterSelection('all')" name="category" checked> Show all
+<input type="radio" onclick="filterSelection('Art')" name="category"> Art
+<input type="radio" onclick="filterSelection('books')" name="category"> Books
+<input type="radio" onclick="filterSelection('codes')" name="category"> Codes
+<input type="radio" onclick="filterSelection('cricket')" name="category"> Cricket
+<input type="radio" onclick="filterSelection('fun')" name="category"> Adventure
+<br>
+<br>
+<br>
+<br>
+
+<button onclick="sortList()">Sort</button>
+
+<ul id="id01" style="list-style-type: none">
+
+  <li id="sort" >Art
+<!-- image grid -->
+<div class="row">
+  <div class="column Art" id="art">
+    <div class="content">
+      <img src="images/art/art.jpg" alt="" style="width:100%">
+      <hr>
+      <h2>My Art Work</h2>
+      <p>The love of Art which each individual uses in defferent ways either by exploring or expressing your feelings.</p>
+     
+
+      <span class="rating" >
+          <input id="rating5" type="radio" name="rating" value="5">
+          <label for="rating5">5</label>
+          <input id="rating4" type="radio" name="rating" value="4">
+          <label for="rating4">4</label>
+          <input id="rating3" type="radio" name="rating" value="3">
+          <label for="rating3">3</label>
+          <input id="rating2" type="radio" name="rating" value="2" checked>
+          <label for="rating2">2</label>
+          <input id="rating1" type="radio" name="rating" value="1">
+          <label for="rating1">1</label>
+      </span>
+      </div>
+    </div>
+
+
+
+<div class="row">
+  <div class="column Art" id="art">
+    <div class="content">
+    <img src="images/art/mandy's logo.jpg" alt="Logo" style="width:100%">
+    <hr>
+    <h2>Logo Design</h2>
+    <p>My Logo Design for my Production, own creation # Exploring my blessing.</p>
+        <span class="rating">
+            <input id="rating5" type="radio" name="rating" value="5">
+            <label for="rating5">5</label>
+            <input id="rating4" type="radio" name="rating" value="4">
+            <label for="rating4">4</label>
+            <input id="rating3" type="radio" name="rating" value="3">
+            <label for="rating3">3</label>
+            <input id="rating2" type="radio" name="rating" value="2" checked>
+            <label for="rating2">2</label>
+            <input id="rating1" type="radio" name="rating" value="1">
+            <label for="rating1">1</label>
+        </span>
+    </div>
+  </div>
+
+<div class="row">
+    <div class="column Art" id="art">
+      <div class="content">
+      <img src="images/art/casper.jpg" alt="Logo" style="width:100%">
+      <hr>
+      <h2>Casper</h2>
+      <p>Class Competition in 2014,female inspiration inversly propotionally.</p>
+          <span class="rating">
+              <input id="rating5" type="radio" name="rating" value="5">
+              <label for="rating5">5</label>
+              <input id="rating4" type="radio" name="rating" value="4">
+              <label for="rating4">4</label>
+              <input id="rating3" type="radio" name="rating" value="3">
+              <label for="rating3">3</label>
+              <input id="rating2" type="radio" name="rating" value="2" checked>
+              <label for="rating2">2</label>
+              <input id="rating1" type="radio" name="rating" value="1">
+              <label for="rating1">1</label>
+          </span>
+      </div>
+    </div>
+    </div>
+</li>
+
+
+ <li id="sort" >Books
+<!-- books -->
+<div class="row">
+  <div class="column books" id="books">
+    <div class="content">
+      <img src="images/books/reflection.jpg" alt="" style="width:100%">
+   <hr>
+      <h2>Refletion Of a Man</h2>
+      <p>Find a man with such level of understanding of women.</p>
+      <span class="rating">
+          <input id="rating5" type="radio" name="rating" value="5">
+          <label for="rating5">5</label>
+          <input id="rating4" type="radio" name="rating" value="4">
+          <label for="rating4">4</label>
+          <input id="rating3" type="radio" name="rating" value="3">
+          <label for="rating3">3</label>
+          <input id="rating2" type="radio" name="rating" value="2" checked>
+          <label for="rating2">2</label>
+          <input id="rating1" type="radio" name="rating" value="1">
+          <label for="rating1">1</label>
+      </span>
+    </div>
+  </div>
+
+<div class="row">
+  <div class="column books" id="books">
+    <div class="content">
+    <img src="images/books/robin sharma.jpg" alt="" style="width:100%">
+   <hr>
+      <h2>Robin Sharma</h2>
+      <p>Entreprenuer Spirit and Mind Set.</p>
+      <span class="rating">
+          <input id="rating5" type="radio" name="rating" value="5">
+          <label for="rating5">5</label>
+          <input id="rating4" type="radio" name="rating" value="4">
+          <label for="rating4">4</label>
+          <input id="rating3" type="radio" name="rating" value="3">
+          <label for="rating3">3</label>
+          <input id="rating2" type="radio" name="rating" value="2" checked>
+          <label for="rating2">2</label>
+          <input id="rating1" type="radio" name="rating" value="1">
+          <label for="rating1">1</label>
+      </span>
+    </div>
+  </div>
+
+<div class="row">
+  <div class="column books" id="books">
+    <div class="content">
+    <img src="images/books/truth.jpg" alt="" style="width:100%">
+   <hr>
+      <h2>The Truth About Sex</h2>
+      <p> </p>
+      <span class="rating">
+          <input id="rating5" type="radio" name="rating" value="5">
+          <label for="rating5">5</label>
+          <input id="rating4" type="radio" name="rating" value="4">
+          <label for="rating4">4</label>
+          <input id="rating3" type="radio" name="rating" value="3">
+          <label for="rating3">3</label>
+          <input id="rating2" type="radio" name="rating" value="2" checked>
+          <label for="rating2">2</label>
+          <input id="rating1" type="radio" name="rating" value="1">
+          <label for="rating1">1</label>
+      </span>
+    </div>
+  </div>
+</div>
+</li>
+
+ <li id="sort" >Code
+  <!-- codes -->
+<div class="row">
+  <div class="column codes" id="code">
+    <div class="content">
+      <img src="images/codes/profile.jpg" alt="" style="width:100%">
+      <hr>
+      <h2>Mandy's Profile</h2>
+      <p>Implimintation of Self taught on creating my Profile with diffrent Languages,that's were i developed love for programming and studied some shortcuts. </p>
+
+
+<a href="profile/index.html"><button style="margin-left:100px; ">Profile</button></a>
+<br>
+<br>
+
+
+      <span class="rating">
+          <input id="rating5" type="radio" name="rating" value="5">
+          <label for="rating5">5</label>
+          <input id="rating4" type="radio" name="rating" value="4">
+          <label for="rating4">4</label>
+          <input id="rating3" type="radio" name="rating" value="3">
+          <label for="rating3">3</label>
+          <input id="rating2" type="radio" name="rating" value="2" checked>
+          <label for="rating2">2</label>
+          <input id="rating1" type="radio" name="rating" value="1">
+          <label for="rating1">1</label>
+      </span>
+
+    </div>
+  </div>
+
+<div class="row">
+  <div class="column codes" id="code">
+    <div class="content">
+    <img src="images/codes/App.jpg" alt="" style="width:100%">
+     <hr>
+      <h2>My Application</h2>
+      <p>Languages Used - HTML,CSS,Javascript, IONIC FrameWork and for back-end Microsoft Azure used. </p>
+
+        <a href="APP/index.html"><button style="margin-left:90px; ">Mobile Application</button></a>
+<br>
+<br>
+
+
+      <span class="rating">
+            <input id="rating5" type="radio" name="rating" value="5">
+            <label for="rating5">5</label>
+            <input id="rating4" type="radio" name="rating" value="4">
+            <label for="rating4">4</label>
+            <input id="rating3" type="radio" name="rating" value="3">
+            <label for="rating3">3</label>
+            <input id="rating2" type="radio" name="rating" value="2" checked>
+            <label for="rating2">2</label>
+            <input id="rating1" type="radio" name="rating" value="1">
+            <label for="rating1">1</label>
+        </span>
+        
+
+    </div>
+  </div>
+
+<div class="row">
+  <div class="column codes" id="code">
+    <div class="content">
+    <img src="images/codes/site.jpg" alt="" style="width:100%">
+     <hr>
+      <h2>Code space task</h2>
+      <p>Responsive site,I would normally just build a non-responsive site which was a disavantage as a developer wanna be ,well now i know whats suitable for a client. </p>
+      <span class="rating">
+          <input id="rating5" type="radio" name="rating" value="5">
+          <label for="rating5">5</label>
+          <input id="rating4" type="radio" name="rating" value="4">
+          <label for="rating4">4</label>
+          <input id="rating3" type="radio" name="rating" value="3">
+          <label for="rating3">3</label>
+          <input id="rating2" type="radio" name="rating" value="2" checked>
+          <label for="rating2">2</label>
+          <input id="rating1" type="radio" name="rating" value="1">
+          <label for="rating1">1</label>
+      </span>
+    </div>
+  </div>  
+</div>
+</li>
+
+ <li id="sort" >Sports
+
+<!-- cricket -->
+
+<div class="row">
+    <div class="column cricket"  id="sports">
+      <div class="content">
+        <img src="images/cricket/cricket.jpg" alt="Car" style="width:100%">
+     <hr>
+      <h2>Mandy & Nadia</h2>
+      <p>Mach at the Tournament were SMWCC won all the matches.</p>
+        <span class="rating">
+            <input id="rating5" type="radio" name="rating" value="5">
+            <label for="rating5">5</label>
+            <input id="rating4" type="radio" name="rating" value="4">
+            <label for="rating4">4</label>
+            <input id="rating3" type="radio" name="rating" value="3">
+            <label for="rating3">3</label>
+            <input id="rating2" type="radio" name="rating" value="2" checked>
+            <label for="rating2">2</label>
+            <input id="rating1" type="radio" name="rating" value="1">
+            <label for="rating1">1</label>
+        </span>
+      </div>
+    </div>
+  
+
+<div class="row">
+    <div class="column cricket"  id="sports">
+      <div class="content">
+      <img src="images/cricket/league.jpg" alt="" style="width:100%">
+     <hr>
+      <h2>SMWCC</h2>
+      <p>Promotional league of 2017. </p>
+        <span class="rating">
+            <input id="rating5" type="radio" name="rating" value="5">
+            <label for="rating5">5</label>
+            <input id="rating4" type="radio" name="rating" value="4">
+            <label for="rating4">4</label>
+            <input id="rating3" type="radio" name="rating" value="3">
+            <label for="rating3">3</label>
+            <input id="rating2" type="radio" name="rating" value="2" checked>
+            <label for="rating2">2</label>
+            <input id="rating1" type="radio" name="rating" value="1">
+            <label for="rating1">1</label>
+        </span>
+      </div>
+    </div>
+
+<div class="row">
+    <div class="column cricket" id="sports">
+      <div class="content">
+      <img src="images/cricket/audi.jpg" alt="" style="width:100%">
+      <hr>
+      <h2>Coaching Workshop</h2>
+      <p>Coaching Workshop that was hosted in New Lands in 2016,The Speaker/Facilitator was Gary Kerstin. </p>
+        <span class="rating">
+            <input id="rating5" type="radio" name="rating" value="5">
+            <label for="rating5">5</label>
+            <input id="rating4" type="radio" name="rating" value="4">
+            <label for="rating4">4</label>
+            <input id="rating3" type="radio" name="rating" value="3">
+            <label for="rating3">3</label>
+            <input id="rating2" type="radio" name="rating" value="2" checked>
+            <label for="rating2">2</label>
+            <input id="rating1" type="radio" name="rating" value="1">
+            <label for="rating1">1</label>
+        </span>
+      </div>
+    </div>
+
+<div class="row">
+    <div class="column cricket" id="sports">
+      <div class="content">
+      <img src="images/cricket/queens.jpg" alt="" style="width:100%">
+       <hr>
+      <h2>Mandy, Athi & Siya</h2>
+      <p>Womens Tournament that was hosted in Langa Sport Field in 2016,SMWCC Won the Tournament,picture was captured by Phumzile Malotana. </p>
+        <span class="rating">
+            <input id="rating5" type="radio" name="rating" value="5">
+            <label for="rating5">5</label>
+            <input id="rating4" type="radio" name="rating" value="4">
+            <label for="rating4">4</label>
+            <input id="rating3" type="radio" name="rating" value="3">
+            <label for="rating3">3</label>
+            <input id="rating2" type="radio" name="rating" value="2" checked>
+            <label for="rating2">2</label>
+            <input id="rating1" type="radio" name="rating" value="1">
+            <label for="rating1">1</label>
+        </span>
+      </div>
+    </div>
+
+<div class="row">
+     <div class="column cricket" id="sports">
+        <div class="content">
+        <img src="images/cricket/promotional league.jpg" alt="" style="width:100%">
+   <hr>
+      <h2>SMWCC (My Team)</h2>
+      <p>The Womens match was hosted in fish hoek 2016. </p>         
+       <span class="rating">
+              <input id="rating5" type="radio" name="rating" value="5">
+              <label for="rating5">5</label>
+              <input id="rating4" type="radio" name="rating" value="4">
+              <label for="rating4">4</label>
+              <input id="rating3" type="radio" name="rating" value="3">
+              <label for="rating3">3</label>
+              <input id="rating2" type="radio" name="rating" value="2" checked>
+              <label for="rating2">2</label>
+              <input id="rating1" type="radio" name="rating" value="1">
+              <label for="rating1">1</label>
+          </span>
+        </div>
+    </div>
+
+
+<div class="row">
+        <div class="column cricket" id="sports">
+          <div class="content">
+          <img src="images/cricket/new lands.jpg" alt="" style="width:100%">
+   <hr>
+      <h2>Cobra's Match </h2>
+      <p>The match was hosted in New Lands on the 8th of Decemember 2017, Cobra's Won the T20.  </p>
+            <span class="rating">
+                <input id="rating5" type="radio" name="rating" value="5">
+                <label for="rating5">5</label>
+                <input id="rating4" type="radio" name="rating" value="4">
+                <label for="rating4">4</label>
+                <input id="rating3" type="radio" name="rating" value="3">
+                <label for="rating3">3</label>
+                <input id="rating2" type="radio" name="rating" value="2" checked>
+                <label for="rating2">2</label>
+                <input id="rating1" type="radio" name="rating" value="1">
+                <label for="rating1">1</label>
+            </span>
+          </div>
+        </div>
+</div>
+
+</li>
+
+ <li id="sort" >Ground
+<!-- adventure -->
+<div class="row">
+      <div class="column fun" id="grounds">
+        <div class="content">
+          <img src="images/fun/ratanga.jpg" alt="" style="width:100%">
+       <hr>
+      <h2>Ratanga junction</h2>
+      <p>Awesome Place to clear your mind from everything with Fun & Exploring. </p>
+          <span class="rating">
+              <input id="rating5" type="radio" name="rating" value="5">
+              <label for="rating5">5</label>
+              <input id="rating4" type="radio" name="rating" value="4">
+              <label for="rating4">4</label>
+              <input id="rating3" type="radio" name="rating" value="3">
+              <label for="rating3">3</label>
+              <input id="rating2" type="radio" name="rating" value="2" checked>
+              <label for="rating2">2</label>
+              <input id="rating1" type="radio" name="rating" value="1">
+              <label for="rating1">1</label>
+          </span>
+        </div>
+      </div>
+
+
+<div class="row">
+      <div class="column fun" id="grounds">
+        <div class="content">
+        <img src="images/fun/hicking.jpg" alt="" style="width:100%">
+          <hr>
+      <h2>Table Mountain</h2>
+      <p>Hicking with ISPAI Organisation and Naluxolo Students. </p>
+          <span class="rating">
+              <input id="rating5" type="radio" name="rating" value="5">
+              <label for="rating5">5</label>
+              <input id="rating4" type="radio" name="rating" value="4">
+              <label for="rating4">4</label>
+              <input id="rating3" type="radio" name="rating" value="3">
+              <label for="rating3">3</label>
+              <input id="rating2" type="radio" name="rating" value="2" checked>
+              <label for="rating2">2</label>
+              <input id="rating1" type="radio" name="rating" value="1">
+              <label for="rating1">1</label>
+          </span>
+        </div>
+      </div>
+      
+      <div class="row">
+      <div class="column fun" id="grounds">
+        <div class="content">
+        <img src="images/fun/train.png" alt="" style="width:100%">
+        <hr>
+      <h2>Cobra</h2>
+      <p> </p>
+          <span class="rating">
+              <input id="rating5" type="radio" name="rating" value="5">
+              <label for="rating5">5</label>
+              <input id="rating4" type="radio" name="rating" value="4">
+              <label for="rating4">4</label>
+              <input id="rating3" type="radio" name="rating" value="3">
+              <label for="rating3">3</label>
+              <input id="rating2" type="radio" name="rating" value="2" checked>
+              <label for="rating2">2</label>
+              <input id="rating1" type="radio" name="rating" value="1">
+              <label for="rating1">1</label>
+          </span>
+        </div>
+      </div>
+</li>
+  </body>
+
+
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) AddClass(x[i], "show");
+  }
+}
+
+function AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+
+
+
+</script>
+
+</html>

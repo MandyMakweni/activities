@@ -1,0 +1,195 @@
+
+.menu-hover-lines {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all 0.35s ease;
+
+}
+
+.menu-hover-lines li a {
+  padding: 0.75rem 0;
+  color: rgba(10, 10, 10, 0.5);
+  position: relative;
+  margin-left: 1rem;
+
+}
+
+.menu-hover-lines li:first-child a {
+  margin-left: 0;
+}
+
+.menu-hover-lines li.active > a {
+  background-color: transparent;
+
+}
+
+.menu-hover-lines a:before,
+.menu-hover-lines a::after {
+  height: 3px;
+  position: absolute;
+  content: '';
+  transition: all 0.35s ease;
+  background-color: #1779ba;
+  width: 0;
+}
+
+.menu-hover-lines a::before {
+  top: 0;
+  left: 0;
+}
+
+.menu-hover-lines a::after {
+  bottom: 0;
+  right: 0;
+}
+
+.menu-hover-lines a:hover,
+.menu-hover-lines li.active > a {
+  color: #0a0a0a;
+  transition: all 0.35s ease;
+}
+
+.menu-hover-lines a:hover::before,
+.menu-hover-lines .active a::before,
+.menu-hover-lines a:hover::after,
+.menu-hover-lines .active a::after {
+  width: 100%;
+}
+/*image grid*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f1f1f1;
+    padding: 20px;
+    font-family: Arial;
+}
+
+/* Center website */
+.main {
+    /*max-width: 1000px;*/
+    margin: 200px;
+   /* height: 90px;
+    width: 900px;*/
+}
+
+h1 {
+    font-size: 50px;
+    word-break: break-all;
+}
+
+h2{
+text-align: center;
+}
+
+p{
+  text-align: center;
+}
+
+
+.row {
+    margin: 10px -16px;
+}
+
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+    padding: 8px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 33.33%;
+    display: none; /* Hide all elements by default */
+}
+
+/* Clear floats after rows */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Content */
+.content {
+    background-color: white;
+    padding: 9px;
+border-color:  #1779ba;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+img {
+    border-radius: 10px;
+
+    width:  300px;
+    height: 450px;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #1779ba;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+ li, #sort{
+  text-decoration: underline;
+  text-align: center;
+font-style: italic;
+color: #1779ba;
+}
+/*stars*/
+
+            .rating{
+                overflow: hidden;
+                vertical-align: bottom;
+                display: inline-block;
+                width: auto;
+                height: 30px;
+                padding-right: 70px;
+            }
+            .rating > input{
+                opacity: 0;
+                margin-right: -100%;
+            }
+            .rating > label{
+                position: relative;
+                display: block;
+                float: right;
+                background: url('images/star/star off.png');
+                background-size: 30px 30px;
+            }
+            .rating > label:before{
+                display: block;
+                opacity: 0;
+                content: '';
+                width: 30px;
+                height: 30px;
+                background: url('images/star/star on.png');
+                background-size: 30px 30px;
+                transition: opacity 0.2s linear;
+            }
+            .rating > label:hover:before,
+            .rating > label:hover ~ label:before,
+            .rating:not(:hover) > :checked ~ label:before{
+                opacity: 1;
+            }
