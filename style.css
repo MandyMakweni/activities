@@ -193,3 +193,18 @@ color: #1779ba;
             .rating:not(:hover) > :checked ~ label:before{
                 opacity: 1;
             }
+
+.mySlides {
+  display:none
+}
+
+/* Slideshow container */
+.slideshow-container {
+width: 1000px;
+margin-top: 200px;
+margin-left: 200px;
+border-radius: 200px;
+border: 10px solid white;
+border-radius: 20px;
+}
+
