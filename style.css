@@ -70,8 +70,15 @@ body {
 
 /* Center website */
 .main {
+<<<<<<< HEAD
+    /*max-width: 1000px;*/
+    margin: 200px;
+   /* height: 90px;
+    width: 900px;*/
+=======
     max-width: 1000px;
     margin: auto;
+>>>>>>> 8b162113c32ea83c2f658137b6eca62a21b2dcd7
 }
 
 h1 {
@@ -79,6 +86,18 @@ h1 {
     word-break: break-all;
 }
 
+<<<<<<< HEAD
+h2{
+text-align: center;
+}
+
+p{
+  text-align: center;
+}
+
+
+=======
+>>>>>>> 8b162113c32ea83c2f658137b6eca62a21b2dcd7
 .row {
     margin: 10px -16px;
 }
@@ -106,9 +125,14 @@ h1 {
 /* Content */
 .content {
     background-color: white;
+<<<<<<< HEAD
+    padding: 9px;
+border-color:  #1779ba;
+=======
     padding: 10px;
     border-radius: #1779ba;
 
+>>>>>>> 8b162113c32ea83c2f658137b6eca62a21b2dcd7
 }
 
 /* The "show" class is added to the filtered elements */
@@ -117,9 +141,14 @@ h1 {
 }
 img {
     border-radius: 10px;
+<<<<<<< HEAD
+
+    width:  300px;
+=======
     position: relative;
     float: left;
     width:  100px;
+>>>>>>> 8b162113c32ea83c2f658137b6eca62a21b2dcd7
     height: 450px;
 }
 
@@ -142,6 +171,14 @@ img {
   background-color: #555;
 }
 
+<<<<<<< HEAD
+ li, #sort{
+  text-decoration: underline;
+  text-align: center;
+font-style: italic;
+color: #1779ba;
+}
+=======
 /*raye*/
 div.stars {
   width: 270px;
@@ -171,6 +208,7 @@ label.star:before {
   font-family: FontAwesome;
 }
 
+>>>>>>> 8b162113c32ea83c2f658137b6eca62a21b2dcd7
 /*stars*/
 
             .rating{
@@ -179,6 +217,10 @@ label.star:before {
                 display: inline-block;
                 width: auto;
                 height: 30px;
+<<<<<<< HEAD
+                padding-right: 70px;
+=======
+>>>>>>> 8b162113c32ea83c2f658137b6eca62a21b2dcd7
             }
             .rating > input{
                 opacity: 0;
@@ -206,3 +248,21 @@ label.star:before {
             .rating:not(:hover) > :checked ~ label:before{
                 opacity: 1;
             }
+<<<<<<< HEAD
+
+.mySlides {
+  display:none
+}
+
+/* Slideshow container */
+.slideshow-container {
+width: 1000px;
+margin-top: 200px;
+margin-left: 200px;
+border-radius: 200px;
+border: 10px solid white;
+border-radius: 20px;
+}
+
+=======
+>>>>>>> 8b162113c32ea83c2f658137b6eca62a21b2dcd7
