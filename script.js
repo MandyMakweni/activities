@@ -9,8 +9,11 @@ function scrollFunction() {
     }
 }
 
+<<<<<<< HEAD
 // sort
 
+=======
+>>>>>>> 8b162113c32ea83c2f658137b6eca62a21b2dcd7
 function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
@@ -23,6 +26,7 @@ function topFunction() {
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-46156385-1', 'cssscript.com');
   ga('send', 'pageview');
+<<<<<<< HEAD
 
 function sortList() {
   var list, i, switching, b, shouldSwitch;
@@ -91,3 +95,5 @@ function showSlides() {
     dots[slideIndex-1].className += " active";
     setTimeout(showSlides, 3000); // Change image every 3 seconds
 }
+=======
+>>>>>>> 8b162113c32ea83c2f658137b6eca62a21b2dcd7
