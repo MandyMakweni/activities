@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style>
+  body {
+  font-family: Futura std,Futura, "Century Gothic",CenturyGothic,"Avant Garde",Avantgarde,Futura,AppleGothic,Arial,Helvetica,sans-serif;
+  color: #444;
+}
+
+h1 {
+  color: #23a;
+  margin: 0;
+}
+
+.comment-box {
+  max-width: 30em;
+  margin: 1em auto;
+  padding: 1em;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.comment-list {
+  height: 20em;
+  margin: 0 -1em 1em -1em;
+  padding: 1em;
+  background: #eef;
+  border-top: solid 1px #ddd;
+  border-bottom: solid 1px #ddd;
+  overflow-y: auto;
+}
+
+.comment-node {
+  position: relative;
+  margin-bottom: 1em;
+  padding: 1.5em;
+  background: #fff;
+  border-radius: 2.1em;
+}
+.comment-node .print-author {
+  position: absolute;
+  top: 0.5em;
+  color: #abf;
+  font-size: 0.7em;
+}
+
+.name-input {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.name-input:not(:focus):valid {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #abf;
+  margin-bottom: -0.5em;
+  padding: 0;
+  cursor: pointer;
+}
+
+input {
+  border: 0;
+}
+
+input[type=text], input[type=password] {
+  display: block;
+  width: calc(100% - 1em);
+  padding: 0.5em;
+  margin: 1em 0;
+  font-size: 1em;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset, 0 1px 4px rgba(0, 0, 0, 0.3) inset;
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset, 0 1px 4px rgba(0, 0, 0, 0.3) inset;
+}
+
+input[type=submit] {
+  min-width: 5em;
+  padding: 0.5em;
+  font-size: 1em;
+  color: #fff;
+  background: #24b;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2), 0 5px 7px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2), 0 5px 7px rgba(0, 0, 0, 0.2);
+}
+input[type=submit]:hover {
+  background: #35c;
+}
+input[type=submit][disabled] {
+  background: #ddd;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+</style>
+  <body>
+
+<div id="app"></div>
+  </body>
+  
+  <script>
+  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) {if (window.CP.shouldStopExecution(1)){break;}if (window.CP.shouldStopExecution(1)){break;} var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); }
+window.CP.exitedLoop(1);
+
+window.CP.exitedLoop(1);
+ } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) {if (window.CP.shouldStopExecution(2)){break;}if (window.CP.shouldStopExecution(2)){break;} if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; }
+window.CP.exitedLoop(2);
+
+window.CP.exitedLoop(2);
+ return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _ReactMotion = ReactMotion,
+    Motion = _ReactMotion.Motion,
+    spring = _ReactMotion.spring,
+    TransitionMotion = _ReactMotion.TransitionMotion;
+
+
+var commentData = [{ author: 'Waympus Loonger', text: 'look at this comment!' }, { author: 'Donderk Sept', text: 'No, this comment is more interesting!' }, { author: 'Lentfop Abdus', text: 'I can say a thing here?' }, { author: 'Stenin Bumk', text: 'Why is wall though?' }, { author: 'Stenin Bumk', text: 'Waldo*' }, { author: 'Hastov Lennonbrook', text: 'H- How did a typo of Waldo turn into wall though???' }, { author: 'Lentfop Abdus', text: '^ this guy' }, { author: 'Stenin Bumk', text: 'It sounds similar!' }, { author: 'Henchtop X. Splathurdin', text: 'y\'all are freaky.' }, { author: 'Snecknope Antlebee', text: 'Guys guys guys!' }, { author: 'Lentfop Abdus', text: 'Jeez what?' }, { author: 'Snecknope Antlebee', text: 'so they say comedy is observation plus time, right?' }, { author: 'xXx_Ethan_xXx', text: 'I\'ll bite.' }, { author: 'xXx_Ethan_xXx', text: 'Yeah that\'s what they say...' }, { author: 'Snecknope Antlebee', text: 'Yeah, but then I got to thinking. Jerry Sienfeld showed us that observation is also comedy!' }, { author: 'Jaymus Flabbergasser', text: 'SEVENTEEN!!!!' }, { author: 'Snecknope Antlebee', text: 'It\'s basic algebra.' }, { author: 'Snecknope Antlebee', text: 'tragedy + time = comedy' }, { author: 'Snecknope Antlebee', text: 'observations = comedy' }, { author: 'Snecknope Antlebee', text: 'thus!!! tragedy = observation - time' }, { author: 'Snecknope Antlebee', text: 'in lame-man-speak timeless observation is equal to tragedy' }];
+
+var springPreset = {
+	wobbly: [120, 11]
+};
+
+var CommentList = function (_React$Component) {
+	_inherits(CommentList, _React$Component);
+
+	function CommentList() {
+		_classCallCheck(this, CommentList);
+
+		return _possibleConstructorReturn(this, (CommentList.__proto__ || Object.getPrototypeOf(CommentList)).apply(this, arguments));
+	}
+
+	_createClass(CommentList, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			this.comDisplay = $('.comment-list');
+		}
+	}, {
+		key: 'componentDidUpdate',
+		value: function componentDidUpdate() {
+			var comHeight = this.comDisplay.outerHeight();
+			var comScroll = this.comDisplay[0].scrollHeight;
+
+			this.comDisplay.stop().animate({ 'scrollTop': comScroll - comHeight }, 200);
+		}
+	}, {
+		key: 'getStyles',
+		value: function getStyles() {
+			var configs = {};
+			this.props.data.forEach(function (val, index) {
+				configs[val.id] = {
+					opacity: spring(1),
+					top: spring(0, springPreset.wobbly)
+				};
+			});
+			return configs;
+		}
+	}, {
+		key: 'willEnter',
+		value: function willEnter(key) {
+			return {
+				opacity: spring(0),
+				top: spring(100, springPreset.wobbly)
+			};
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			var _this2 = this;
+
+			return React.createElement(
+				TransitionMotion,
+				{
+					styles: this.getStyles(),
+					willEnter: this.willEnter,
+					willLeave: this.willLeave },
+				function (interp) {
+					return React.createElement(
+						'div',
+						{ className: 'comment-list' },
+						_this2.props.data.map(function (comment, i) {
+							var style = _objectWithoutProperties(interp[i + 1], []);
+
+							return React.createElement(
+								'div',
+								{ className: 'comment-node', author: comment.author, key: comment.id, style: style },
+								React.createElement(
+									'div',
+									{ className: 'print-author' },
+									comment.author + ' - '
+								),
+								comment.text
+							);
+						})
+					);
+				}
+			);
+		}
+	}]);
+
+	return CommentList;
+}(React.Component);
+
+var CommentForm = function (_React$Component2) {
+	_inherits(CommentForm, _React$Component2);
+
+	function CommentForm() {
+		_classCallCheck(this, CommentForm);
+
+		var _this3 = _possibleConstructorReturn(this, (CommentForm.__proto__ || Object.getPrototypeOf(CommentForm)).call(this));
+
+		_this3.handleAuthorChange = function (e) {
+			_this3.setState({ author: e.target.value });
+		};
+
+		_this3.handleTextChange = function (e) {
+			_this3.setState({ text: e.target.value });
+		};
+
+		_this3.handleSubmit = function (e) {
+			e.preventDefault();
+			var author = _this3.state.author.trim(),
+			    text = _this3.state.text.trim();
+			if (!text || !author) {
+				return;
+			}
+			_this3.props.onCommentSubmit({ author: author, text: text });
+			_this3.setState({ text: '' });
+		};
+
+		_this3.state = { author: '', text: '', canPost: 'disabled' };
+		return _this3;
+	}
+
+	_createClass(CommentForm, [{
+		key: 'render',
+		value: function render() {
+			return React.createElement(
+				'form',
+				{ className: 'comment-form', onSubmit: this.handleSubmit },
+				React.createElement('input', {
+					type: 'text',
+					placeholder: 'Name',
+					value: this.state.author,
+					onChange: this.handleAuthorChange,
+					maxLength: '20',
+					className: 'name-input',
+					required: true
+				}),
+				React.createElement('input', {
+					type: 'text',
+					placeholder: 'Comment',
+					value: this.state.text,
+					onChange: this.handleTextChange
+				}),
+				React.createElement('input', {
+					type: 'submit',
+					value: 'Post',
+					disabled: !this.state.author.trim() || !this.state.text.trim()
+				})
+			);
+		}
+	}]);
+
+	return CommentForm;
+}(React.Component);
+
+;
+
+var CommentBox = function (_React$Component3) {
+	_inherits(CommentBox, _React$Component3);
+
+	function CommentBox() {
+		_classCallCheck(this, CommentBox);
+
+		var _this4 = _possibleConstructorReturn(this, (CommentBox.__proto__ || Object.getPrototypeOf(CommentBox)).call(this));
+
+		_this4.handleCommentSubmit = function (comment) {
+			comment['id'] = _this4.state.data.length + 1;
+			_this4.setState({ data: _this4.state.data.concat(comment) });
+		};
+
+		_this4.addRandomComment = function () {
+			_this4.handleCommentSubmit(commentData[0]);
+			commentData.splice(0, 1);
+			if (commentData.length > 0) {
+				var cTime = Math.random() * 7000 + 500;
+				setTimeout(_this4.addRandomComment, cTime);
+			}
+		};
+
+		_this4.state = { data: [] };
+		return _this4;
+	}
+
+	_createClass(CommentBox, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			this.addRandomComment();
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			return React.createElement(
+				'div',
+				{ className: 'comment-box' },
+				React.createElement(
+					'h1',
+					null,
+					'Comments'
+				),
+				React.createElement(CommentList, { data: this.state.data }),
+				React.createElement(CommentForm, { onCommentSubmit: this.handleCommentSubmit })
+			);
+		}
+	}]);
+
+	return CommentBox;
+}(React.Component);
+
+React.render(React.createElement(CommentBox, null), document.getElementById('app'));
+
+</script>
+
+
+</html>
